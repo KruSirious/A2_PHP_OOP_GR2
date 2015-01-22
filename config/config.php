@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'dbname' => 'pokemon ',
+    'dbname' => 'pokemon',
     'user' => 'root',
     'password' => '',
     'host' => 'localhost',
