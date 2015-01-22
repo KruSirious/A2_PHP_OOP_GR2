@@ -1,0 +1,27 @@
+{
+    "name": "Antoine/pokemon-battle",
+    "require": {
+        "cocur/slugify": "~1.0",
+        "doctrine/dbal": "~2.5",
+        "doctrine/orm": "~2.3",
+        "symfony/console": "~2.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Antoine de FOUCAUD",
+            "email": "antoine.defoucaud@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "KruSirious\\PokemonBattle\\": "src"
+        }
+    },
+
+    "config": {
+        "bin-dir": "bin"
+    }
+
+}
+
