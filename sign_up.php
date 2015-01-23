@@ -1,4 +1,4 @@
-<?php
+<?php require __DIR__ .'/header.php';
 
 use KruSirious\PokemonBattle\Trainer;
 

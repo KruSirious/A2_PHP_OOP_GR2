@@ -1,5 +1,5 @@
 <?php
-namespace KruSirious\PokemonBattle\Model;
+namespace KruSirious\PokemonBattle;
 /**
  * Class Pokemon
  *
@@ -8,7 +8,7 @@ namespace KruSirious\PokemonBattle\Model;
  * @Entity
  * @Table(name="pokemon")
  */
-class Pokemon implements PokemonInterface
+class Pokemon implements Model\PokemonInterface
 {
     /**
      * @var int
