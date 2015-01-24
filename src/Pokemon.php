@@ -31,14 +31,20 @@ class Pokemon implements Model\PokemonInterface
      */
     private $hp;
     /**
+     * @var trainer
+     *
+     * @OneToOne(targetEntity="Trainer")
+     */
+    private $trainer;
+    /**
      * @var int
      *
      * @Column(name="type", type="smallint", length=1)
      */
     private $type;
-    const TYPE_WATER = 0;
-    const TYPE_FIRE = 1;
-    const TYPE_PLANT = 2;
+    const TYPE_FIRE = 0;
+    const TYPE_PLANT = 1;
+    const TYPE_WATER = 2;
 
     /**
      * @return mixed
@@ -58,12 +64,12 @@ class Pokemon implements Model\PokemonInterface
 
     /**
      * @param string $name
-     * @return PokemonModel
+     * @return Pokemon
      * @throws \Exception
      */
     public function setName($name)
     {
-        if (is_int($name))
+        if (is_string($name))
             $this->name = $name;
         else
             throw new \Exception('Name must be a string');
@@ -80,7 +86,7 @@ class Pokemon implements Model\PokemonInterface
 
     /**
      * @param int $hp
-     * @return PokemonModel
+     * @return Pokemon
      * @throws \Exception
      */
     public function setHp($hp)
@@ -94,7 +100,7 @@ class Pokemon implements Model\PokemonInterface
 
     /**
      * @param int $hp
-     * @return PokemonModel
+     * @return Pokemon
      * @throws \Exception
      */
     public function addHP($hp)
@@ -104,7 +110,7 @@ class Pokemon implements Model\PokemonInterface
 
     /**
      * @param int $hp
-     * @return PokemonModel
+     * @return Pokemon
      * @throws \Exception
      */
     public function removeHP($hp)
@@ -122,7 +128,7 @@ class Pokemon implements Model\PokemonInterface
 
     /**
      * @param int $type
-     * @return PokemonModel
+     * @return Pokemon
      * @throws \Exception
      */
     public function setType($type)
@@ -138,4 +144,29 @@ class Pokemon implements Model\PokemonInterface
             throw new \Exception('Status not valid');
         return $this;
     }
+
+    /**
+     * @return trainer
+     */
+    public function getTrainer()
+    {
+        return $this->trainer;
+    }
+
+    /**
+     * @param trainer $trainer
+     * @return Pokemon
+     * @throws \Exception
+     */
+    public function setTrainer($trainer)
+    {
+        if(is_object($trainer))
+         $this->trainer = $trainer;
+        else
+            throw new \Exception ('Trainer must be an object');
+
+        return $this;
+    }
+
+
 }
