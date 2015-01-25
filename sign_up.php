@@ -19,7 +19,7 @@ if(isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['pass
 // on envoie les données vers la base de donnée
     $em->flush();
 
-    echo "vous êtes un batard !";
+    echo "Félicitation allez choisir votre pokémon !";
 
 
 
