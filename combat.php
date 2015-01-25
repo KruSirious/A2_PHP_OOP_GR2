@@ -27,24 +27,24 @@ $pokemon = $pokemonRepo->findAll(); ?>
 
 Choissisez votre Adversaire :
         <table >
-            <tbody> <?php foreach ($pokemon as $var) {
-             $var->getTrainer(); ?>
+            <tbody> <?php foreach ($pokemon as $pok) {
+             $pok->getTrainer(); ?>
                 <tr>
                     <td>
-                        <?php echo $var->getName(); ?>
+                        <?php echo $pok->getName(); ?>
                     </td>
-                    <td><?php echo $var->getHp(); ?></td>
+                    <td><?php echo $pok->getHp(); ?></td>
                     <td>
                         <?php
-                        if ($var->getType() == "0")
+                        if ($pok->getType() == "0")
                             echo "Fire";
-                        elseif ($var->getType() == "1")
+                        elseif ($pok->getType() == "1")
                             echo "Plant";
-                        elseif ($var->getType() == "2")
+                        elseif ($pok->getType() == "2")
                             echo "Water";
                         ?>
                     </td>
-                    <td><button><a href="defi.php?id=<?php echo $var->getId();?>">Defie-le !</a></button></td>
+                    <td><button><a href="defi.php?id=<?php echo $pok->getId();?>">Defie-le !</a></button></td>
                 </tr>
             <?php } ?>
             </tbody>
